@@ -12,10 +12,14 @@
 body { 
     font-size: 16px;
     background-color: black;
-
-    font-family: Arial, Helvetica, sans-serif;
-
+    background-image: url(../images/bgi_chalk_board.jfif);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-size: cover;
     color: white;
+}
+
+header {
+    background-color: darkgreen;
 }
 
 header > h1 { text-align: center; padding: 8px; }
@@ -33,12 +37,12 @@ article {
 
 main { text-align: center; }
 
-article > h2 { color: gray;  padding: 4px 8px; }
+article > h2 { color: red;  padding: 4px 8px; }
 
-article:first-of-type { border: 4px solid gray; }
+article:first-of-type { border: 4px solid red; }
 
-#inprogress { border: 4px solid red; }
-#inprogress h2 { color: red; }
+#inprogress { border: 4px solid lightseagreen; }
+#inprogress h2 { color: lightseagreen; }
 
 #done { border: 4px solid green; }
 #done h2 { color: green; }
@@ -47,8 +51,63 @@ ul { list-style-type: none; }
 
 ul li { padding: 6px 8px; text-transform: uppercase; }
 
-.todo li:nth-child(odd) { background-color: rgba(255, 255, 255, 0.2)}
+.todo li:nth-child(odd) { background-color: rgba(255, 0, 0, 0.5)}
 
-.inprogress li:nth-child(odd) { background-color: rgba(255, 0, 0, 0.5)}
+.inprogress li:nth-child(odd) { background-color: lightseagreen}
 
 .done li:nth-child(odd) { background-color: rgba(0, 255, 0, 0.5)}
+
+/* Checkbox */
+input[type="checkbox"] { margin-left: 10px;}
+
+input[type="checkbox"]:checked::after {
+    content: '\2713';
+    width: 25px;
+    height: 25px;
+    padding: 4px;
+    background-color: blue;
+    border: 4px solid orangered;
+    top: 10px;
+    right: 18px;
+    font-size: 1.5em;
+    margin-left: 50px;
+
+    animation: fadeIn 0.7s;
+  }
+
+ .inprogress input[type="checkbox"]:checked::after {
+    content: url(../images/loading_wheel.png);
+    width: 25px;
+    height: 25px;
+    padding: 4px;
+    background-color: transparent;
+    border: 4px solid transparent;
+   
+    top: 10px;
+    right: 18px;
+    font-size: 1.5em;
+    align-self: center;
+
+    animation: fadeIn 0.7s;
+  }
+
+  .loading {
+    display: flex;
+    justify-content: center;
+  }
+
+  .loading::after {
+    content: "";
+    width: 15px;
+    height: 15px;
+    border: 10px solid transparent;
+    border-top-color: aquamarine;
+    border-radius: 50%;
+    animation: loading 1s linear infinite;
+  }
+
+  @keyframes loading {
+    to {
+        transform: rotate(1turn)
+    }
+  }
