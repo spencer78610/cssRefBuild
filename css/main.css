@@ -62,11 +62,13 @@ input[type="checkbox"] { margin-left: 10px;}
 
 input[type="checkbox"]:checked::after {
     content: '\2713';
+    color: #fff;
     width: 25px;
     height: 25px;
     padding: 4px;
     background-color: blue;
-    border: 4px solid orangered;
+    /* border: 2px solid orangered; */
+    border-radius: 10px;
     top: 10px;
     right: 18px;
     font-size: 1.5em;
@@ -76,17 +78,24 @@ input[type="checkbox"]:checked::after {
   }
 
  .inprogress input[type="checkbox"]:checked::after {
-    content: url(../images/loading_wheel.png);
-    width: 25px;
-    height: 25px;
+    content: "";
+    background: url(../images/loading.gif) no-repeat;
+    background-size: 15px 15px;
+
+    /* width: 30px;
+    height: 20px; */
     padding: 4px;
     background-color: transparent;
     border: 4px solid transparent;
+    /* position: absolute; */
+
+    left: 55%;
+    top: 15%;
    
-    top: 10px;
-    right: 18px;
+    /* top: 10px;
+    right: 18px; */
     font-size: 1.5em;
-    align-self: center;
+
 
     animation: fadeIn 0.7s;
   }
@@ -96,7 +105,7 @@ input[type="checkbox"]:checked::after {
     justify-content: center;
   }
 
-  .loading::after {
+  /* .loading::after {
     content: "";
     width: 15px;
     height: 15px;
@@ -104,8 +113,18 @@ input[type="checkbox"]:checked::after {
     border-top-color: aquamarine;
     border-radius: 50%;
     animation: loading 1s linear infinite;
-  }
+  } */
 
+  /* .inprogress::after {
+    content: "";
+    width: 15px;
+    height: 15px;
+    border: 10px solid transparent;
+    border-top-color: aquamarine;
+    border-radius: 50%;
+    animation: loading 1s linear infinite;
+
+  } */
   @keyframes loading {
     to {
         transform: rotate(1turn)
